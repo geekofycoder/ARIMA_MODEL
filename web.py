@@ -35,7 +35,7 @@ def create_arima_forecast_plot():
     fig.add_trace(go.Scatter(x=pd.date_range(start=district_data.index[-1], periods=6, freq='Y')[1:], y=arima_forecast, mode='lines+markers', name='ARIMA Forecast'))
 
     # Update layout
-    fig.update_layout(title_text="ARIMA Forecast of Total IPC Crimes in YourDistrict", xaxis_title="Year", yaxis_title="Total IPC Crimes")
+    fig.update_layout(title_text="Forecast of Total Crimes in ODISHA for 5 years", xaxis_title="Year", yaxis_title="Total IPC Crimes")
 
     return fig
 
