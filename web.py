@@ -6,8 +6,6 @@ from statsmodels.tsa.arima.model import ARIMA
 crime_data=pd.read_csv('District_wise_crimes_committed_IPC_2001_2012.csv')
 odisha_crime_data=crime_data.loc[crime_data.STATE_UT=="ODISHA"]
 odisha_copy=odisha_crime_data.copy()
-odisha_crime_data=odisha_crime_data.set_index('DISTRICT')
-odisha_crime_data=odisha_crime_data.drop(['STATE_UT','YEAR'],axis=1)
 # Load the dataset
 data = odisha_copy
 
