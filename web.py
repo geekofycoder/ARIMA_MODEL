@@ -27,11 +27,13 @@ def create_arima_forecast_plot():
     fig = go.Figure()
 
     # Add historical data
-    fig.add_trace(go.Scatter(x=district_data.index, y=district_data.values, mode='lines+markers', name='Historical Data'))
+    fig.add_trace(go.Scatter(x=district_data.index, y=district_data.values, mode='lines+markers',
+                             name='Historical Data', line=dict(color='royalblue')))
 
     # Add ARIMA forecast
     fig.add_trace(go.Scatter(x=pd.date_range(start=district_data.index[-1], periods=6, freq='Y')[1:],
-                             y=arima_forecast, mode='lines+markers', name='ARIMA Forecast'))
+                             y=arima_forecast, mode='lines+markers', name='ARIMA Forecast', 
+                             line=dict(color='darkorange')))
 
     # Update layout
     fig.update_layout(title_text="Forecast of Total Crimes in ODISHA for 5 years",
@@ -70,12 +72,10 @@ def main():
         unsafe_allow_html=True
     )
     st.markdown('<p class="title">Crime Forecasting Application</p>', unsafe_allow_html=True)
-    st.markdown('<p class="subtitle">Website displaying the ARIMA forecast of total IPC crimes in a specific district.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subtitle">This web application displays the ARIMA forecast of total IPC crimes in a specific district.</p>', unsafe_allow_html=True)
 
     # Display the ARIMA forecast plot
     st.plotly_chart(create_arima_forecast_plot(), use_container_width=True)
 
 if __name__ == '__main__':
     main()
-
-
