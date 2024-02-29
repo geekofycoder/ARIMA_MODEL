@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.graph_objs as go
+from plotly import plotly.graph_objs as go
 from statsmodels.tsa.arima.model import ARIMA
 
 crime_data=pd.read_csv('District_wise_crimes_committed_IPC_2001_2012.csv')
