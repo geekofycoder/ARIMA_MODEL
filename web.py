@@ -38,9 +38,9 @@ def create_arima_forecast_plot():
     # Update layout
     fig.update_layout(title_text="Forecast of Total Crimes in ODISHA for 5 years",
                       xaxis_title="Year", yaxis_title="Total IPC Crimes",
-                      plot_bgcolor='rgba(255, 255, 255, 0)',  # Set plot background color to transparent
-                      paper_bgcolor='#f8f9fa',  # Set paper background color to light gray
-                      font=dict(family="Arial, sans-serif", size=12, color="#333"))  # Set font style, size, and color
+                      plot_bgcolor='rgba(0, 0, 0, 0)',  # Set plot background color to transparent
+                      paper_bgcolor='#222',  # Set paper background color to dark gray
+                      font=dict(family="Arial, sans-serif", size=12, color="#eee"))  # Set font style, size, and color
 
     return fig
 
